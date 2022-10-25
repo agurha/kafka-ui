@@ -17,11 +17,11 @@ export interface VesionProps {
 const Version: React.FC = () => {
   const formatTimestamp = useTimeFormat();
   const { data: actuatorInfo = {} } = useActuatorInfo();
-  const { data: latestVersionInfo = {} } = useLatestVersion();
+  // const { data: latestVersionInfo = {} } = useLatestVersion();
 
   const tag = actuatorInfo?.build?.version;
   const commit = actuatorInfo?.git?.commit.id;
-  const { tag_name: latestTag } = latestVersionInfo;
+  const latestTag  = "latest";
 
   const outdated = compareVersions(tag, latestTag);
 
